@@ -49,6 +49,9 @@ echo "<script>$JS_CONTENTS</script>" >> $BUILD_FILE
 echo "<style>$CSS_CONTENTS</style>" >> $BUILD_FILE
 echo "$CONTENTS_AFTER_CODEMIRROR" >> $BUILD_FILE
 
-zip ${BUILD_FILE}.zip $BUILD_FILE
+# If we have zip command then compress the build file
+hash zip && {
+    zip ${BUILD_FILE}.zip $BUILD_FILE;
+}
 
 echo "Build file $BUILD_FILE complete."
