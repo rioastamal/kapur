@@ -20,7 +20,7 @@ Demo are available at [https://rioastamal.net/kapur/](https://rioastamal.net/kap
 
 ## Download
 
-You can find the distribution version of at Github [release page](https://github.com/rioastamal/kapur/releases).
+You can find the distribution version of Kapur at Github [release page](https://github.com/rioastamal/kapur/releases).
 
 As an alternative you can also download the tarball from repository Download button. If you prefer cloning via Git you can use following command.
 
@@ -30,7 +30,7 @@ $ git clone https://github.com/rioastamal/kapur.git
 
 ## Run
 
-Just open file `kapur.html` using web browser and you're ready to go. If you cloning the project from Github you can also run the editor by opening file `src/kapur.html`.
+Just open file `kapur.html` using web browser and you're ready to go. If you are cloning the project from Github you can also run the editor by opening file `src/kapur.html`.
 
 ## Build
 
@@ -38,6 +38,7 @@ The build process will generate single HTML file of the editor. It could be usef
 
 ```
 $ bash build.sh
+  adding: build/kapur.html (deflated 71%)
 Build file build/kapur.html complete.
 ```
 
@@ -63,7 +64,7 @@ Yes. Open the menu and choose "Save Preview As...".
 
 ### Can I save the Preview as PDF?
 
-It depends on your browser or OS support. If your browser or OS able print as PDF then you're lucky. Here's how to do it
+It depends on your browser or OS support. If your browser or OS able to print as PDF then you're lucky. Here's how to do it
 
 1. Save the preview by cliking "Save Preview As..." 
 2. Open the saved file using your browser
