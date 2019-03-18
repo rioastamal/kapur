@@ -9,6 +9,7 @@
     exit 1
 }
 
+KAPUR_VERSION=1.0
 JS_CONTENTS=
 CSS_CONTENT=
 BUILD_FILE=build/kapur.html
@@ -51,7 +52,7 @@ echo "$CONTENTS_AFTER_CODEMIRROR" >> $BUILD_FILE
 
 # If we have zip command then compress the build file
 hash zip && {
-    zip ${BUILD_FILE}.zip $BUILD_FILE;
+    zip build/kapur-${KAPUR_VERSION}.zip $BUILD_FILE;
 }
 
 echo "Build file $BUILD_FILE complete."
