@@ -1,6 +1,6 @@
-## About Kapur
+## Kapur Markdown Editor
 
-Kapur is lightweight Markdown editor with syntax highlighting and instant preview capability. It has two main windows -- left is used for editor and the right one is used for Markdown preview. Kapur is built on top of ShowdownJS for Markdown parser and CodeMirror for syntax highlighting.
+[Kapur](https://github.com/rioastamal/kapur/) is lightweight Markdown editor with syntax highlighting and instant preview capability. It has two main windows -- left is used for editor and the right one is used for Markdown preview. Kapur is built on top of ShowdownJS for Markdown parser and CodeMirror for syntax highlighting.
 
 Kapur Markdown Editor support following features.
 
@@ -45,6 +45,16 @@ Build file build/kapur.html complete.
 You can try to open file `build/kapur.html` using web browser.
 
 ## FAQ
+
+### What Browser does Kapur support?
+
+Kapur should works in all major modern browsers such as Safari, Chrome, Firefox and others. It has been tested with the following browsers.
+
+1. Safari 11.1.2 on MacOS High Sierra
+2. Firefox 65.0.1 on MacOS High Sierra
+3. Chrome 73 on MacOS High Sierra
+
+If you have problem running Kapur on your browser, please report.
 
 ### Can I use Kapur without internet?
 
