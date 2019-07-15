@@ -9,10 +9,10 @@
     exit 1
 }
 
-KAPUR_VERSION=1.0
+KAPUR_VERSION=1.1
 JS_CONTENTS=
 CSS_CONTENT=
-BUILD_FILE=build/kapur.html
+BUILD_FILE=build/kapur-${KAPUR_VERSION}.html
 
 cp src/kapur.html $BUILD_FILE
 

@@ -38,8 +38,8 @@ The build process will generate single HTML file of the editor. It could be usef
 
 ```
 $ bash build.sh
-  adding: build/kapur.html (deflated 71%)
-Build file build/kapur.html complete.
+  adding: build/kapur-1.1.html (deflated 71%)
+Build file build/kapur-1.1.html complete.
 ```
 
 You can try to open file `build/kapur.html` using web browser.
