@@ -55,4 +55,6 @@ hash zip && {
     zip build/kapur-${KAPUR_VERSION}.zip $BUILD_FILE;
 }
 
+ln -fs kapur-${KAPUR_VERSION}.html build/kapur.html
+
 echo "Build file $BUILD_FILE complete."
