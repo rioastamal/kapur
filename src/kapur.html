@@ -348,10 +348,33 @@ cm.on('change', function() {
     updatePreview(converter.makeHtml(cm.getValue()));
 });
 
+/**
+ * @return void
+ */
 window.onload = function()
 {
     updatePreview(converter.makeHtml(cm.getValue()));
 }
+
+/**
+ * @param Events e
+ * @return null|String
+ */
+window.onbeforeunload = function(e)
+{
+    if (cm.getValue() === '') {
+        return null;
+    }
+
+    if (e) {
+        // Cancel the event
+        e.preventDefault();
+        // Chrome requires returnValue to be set
+        e.returnValue = '';
+    }
+
+    return 'Are you sure want to exit?';
+};
 </script>
 </body>
 </html>
