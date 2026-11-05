@@ -146,10 +146,6 @@ ul.menu-list li a {
         float: left;
         padding-bottom: 0;
     }
-    .full-width {
-        width: 100%;
-        float: initial;
-    }
     .menu {
         width: 300px;
         border-right: 1px dotted #999;
@@ -158,6 +154,10 @@ ul.menu-list li a {
     .preview {
         width: 50%;
         float: left;
+    }
+    .full-width {
+        width: 100%;
+        float: initial;
     }
 }
 </style>
@@ -181,6 +181,7 @@ ul.menu-list li a {
         <li><a id="menu-save-file" title="Save As" href="#">Save As...</a></li>
         <li><a id="menu-save-preview-file" title="Save Preview As" href="#">Save Preview As...</a></li>
         <li><a id="menu-word-wrap" href="#" data-word-wrap="yes" title="Word wrap editor">Word Wrap &#x2713</a></li>
+        <li><a id="menu-show-editor" href="#" data-show-editor="yes" title="Show or hide editor window">Editor &#x2713</a></li>
         <li><a id="menu-show-preview" href="#" data-show-preview="yes" title="Show or hide preview window">Preview Window &#x2713</a></li>
         <li><a id="menu-github-page" href="https://github.com/rioastamal/kapur" title="Kapur Github page">Contribute</a></li>
     </ul>
@@ -279,13 +280,50 @@ document.getElementById('menu-word-wrap').onclick = function(e)
     return false;
 }
 
+document.getElementById('menu-show-editor').onclick = function(e)
+{
+    var currentEditorStatus = this.getAttribute('data-show-editor');
+    var currentPreviewStatus = document.getElementById('menu-show-preview').getAttribute('data-show-preview');
+
+    if (currentEditorStatus == 'no') {
+        if (currentPreviewStatus == 'yes') {
+            EditorWrapper.className = 'editor';
+            previeWrapper.className = 'preview';
+        } else {
+            EditorWrapper.className = 'editor full-width';
+            previeWrapper.className = 'preview hide';
+        }
+        this.setAttribute('data-show-editor', 'yes');
+        this.innerHTML = 'Editor &#x2713';
+        cm.refresh();
+
+        return false;
+    }
+
+    EditorWrapper.className = 'editor hide';
+    if (currentPreviewStatus == 'yes') {
+        previeWrapper.className = 'preview full-width';
+    } else {
+        previeWrapper.className = 'preview hide';
+    }
+    this.setAttribute('data-show-editor', 'no');
+    this.innerHTML = 'Editor';
+    return false;
+}
+
 document.getElementById('menu-show-preview').onclick = function(e)
 {
     var currentPreviewStatus = this.getAttribute('data-show-preview');
+    var currentEditorStatus = document.getElementById('menu-show-editor').getAttribute('data-show-editor');
 
     if (currentPreviewStatus == 'no') {
-        previeWrapper.className = 'preview';
-        EditorWrapper.className = 'editor';
+        if (currentEditorStatus == 'yes') {
+            previeWrapper.className = 'preview';
+            EditorWrapper.className = 'editor';
+        } else {
+            previeWrapper.className = 'preview full-width';
+            EditorWrapper.className = 'editor hide';
+        }
         this.setAttribute('data-show-preview', 'yes');
         this.innerHTML = 'Preview Window &#x2713';
 
@@ -293,7 +331,11 @@ document.getElementById('menu-show-preview').onclick = function(e)
     }
 
     previeWrapper.className = 'preview hide';
-    EditorWrapper.className = 'editor full-width';
+    if (currentEditorStatus == 'yes') {
+        EditorWrapper.className = 'editor full-width';
+    } else {
+        EditorWrapper.className = 'editor hide';
+    }
     this.setAttribute('data-show-preview', 'no');
     this.innerHTML = 'Preview Window';
     return false;
