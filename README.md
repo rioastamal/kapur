@@ -10,6 +10,9 @@ Kapur Markdown Editor support following features.
 - Open file from local disk
 - Save markdown to local disk
 - Save html preview to local disk
+- Toggle preview window
+- Toggle markdown editor
+- Word wrap editor
 - Responsive design for mobile
 
 With all those features Kapur is only a single HTML file! No dependencies and no software to download.
@@ -38,8 +41,8 @@ The build process will generate single HTML file of the editor. It could be usef
 
 ```
 $ bash build.sh
-  adding: build/kapur-1.1.html (deflated 71%)
-Build file build/kapur-1.1.html complete.
+  adding: build/kapur-1.3.html (deflated 71%)
+Build file build/kapur-1.3.html complete.
 ```
 
 You can try to open file `build/kapur.html` using web browser.
